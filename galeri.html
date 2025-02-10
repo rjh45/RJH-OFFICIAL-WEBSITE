@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeri</title>
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    
+    <style>
+        @font-face {
+            font-family: 'Nico Moji';
+            src: url('NicoMoji-Regular.ttf') format('truetype');
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .container {
+            min-height: 100vh;
+            width: 100%;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding-bottom: 30px;
+        }
+        
+        .header {
+            width: 100%;
+            height: 80px;
+            background-color: black;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            box-sizing: border-box;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+        
+        .logo-title {
+            display: flex;
+            align-items: center;
+        }
+        .logo-title img {
+            width: 60px;
+            height: 60px;
+            margin-right: 10px;
+        }
+        .logo-title h1 {
+            font-family: 'Nico Moji', sans-serif;
+            color: white;
+            font-size: 28px;
+            margin: 0;
+        }
+        .menu {
+            display: flex;
+        }
+        .menu a {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 18px;
+            padding-right: 20px;
+            color: white;
+            text-decoration: none;
+            transition: 0.3s;
+            letter-spacing: 1px;
+        }
+        .menu a:hover {
+            color: #b4b4b4;
+        }
+        
+        .isi {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            width: 100%;
+            margin-top: 100px;
+            margin-bottom: 30px;
+        }
+        
+        .isi img {
+            width: 70%;
+            max-width: 1000px;
+            height: auto;
+            border-radius: 15px;
+            display: block;
+        }
+        @media (max-width: 1024px) {
+            .header { height: 70px; padding: 0 15px; }
+            .logo-title img { width: 50px; height: 50px; }
+            .logo-title h1 { font-size: 24px; }
+            .menu a { font-size: 16px; padding: 8px; }
+        }
+        @media (max-width: 768px) {
+            .header {
+                height: 60px;
+                padding: 0 10px;
+            }
+            .logo-title img {
+                width: 50px;
+                height: 50px;
+            }
+            .logo-title h1 {
+                font-size: 24px;
+            }
+            .menu a {
+                font-size: 16px;
+                padding-right: 10px;
+            }
+        }
+        @media (max-width: 480px) {
+            .header { height: 50px; padding: 0 5px; }
+            .logo-title img { width: 30px; height: 30px; }
+            .logo-title h1 { font-size: 16px; }
+            .menu a { font-size: 12px; padding: 4px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo-title">
+                <img src="WhatsApp Image 2024-07-13 at 10.47.58_02d5fb7f.jpg" alt="LOGO">
+                <h1>RJH45</h1>
+            </div>
+            <div class="menu">
+                <a href="index.html">Beranda</a>
+                <a href="babad.html">Babad</a>
+                <a href="galeri.html">Galeri</a>
+            </div>
+        </div>
+        <div class="isi">
+            <img src="1.jpg" alt="foto tim vs lion muda">
+            <img src="2.jpg" alt="foto tim vs sangkuriang">
+            <img src="3.jpg" alt="foto tim vs muda fc">
+        </div>
+    </div>
+</body>
+</html>
