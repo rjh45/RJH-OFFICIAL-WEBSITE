@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeri</title>
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    
+    <style>
+        @font-face {
+            font-family: 'Nico Moji';
+            src: url('NicoMoji-Regular.ttf') format('truetype');
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .container {
+            min-height: 100vh;
+            width: 100%;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding-bottom: 30px;
+        }
+        
+        .header {
+            width: 100%;
+            height: 80px;
+            background-color: black;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            box-sizing: border-box;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+        
+        .logo-title {
+            display: flex;
+            align-items: center;
+        }
+        .logo-title img {
+            width: 60px;
+            height: 60px;
+            margin-right: 10px;
+        }
+        .logo-title h1 {
+            font-family: 'Nico Moji', sans-serif;
+            color: white;
+            font-size: 28px;
+            margin: 0;
+        }
+        .menu {
+            display: flex;
+        }
+        .menu a {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 18px;
+            padding-right: 20px;
+            color: white;
+            text-decoration: none;
+            transition: 0.3s;
+            letter-spacing: 1px;
+        }
+        .menu a:hover {
+            color: #b4b4b4;
+        }
+
+        .artikel {
+            width: 100%;
+            max-width: 1200px;
+            margin-top: 120px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .img {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .img img {
+            width: 100%;
+            max-width: 1400px;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .img p {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            color: #666;
+            margin-top: 10px;
+            text-align: left;
+        }
+
+        .isi p {
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            color: #333;
+            line-height: 1.6;
+            text-align: justify; /* This makes the text justified across the container */
+            width: 100%;
+            margin-top: 30px;
+            padding: 0 15px; /* Adding padding to give space from the sides */
+        }
+
+        .hdrtext {
+            font-family: arial, sans-serif;
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        .hdrtext p {
+            font-size: 20px;
+        }
+        .hdrtext h1 {
+            font-size: 28px;
+            padding-top: 15px;
+            padding-bottom: 9px;
+        }
+        .hdrtext span {
+            font-size: 16px;
+        }
+
+         /* Responsiveness */
+         @media (max-width: 1024px) {
+            .header { height: 70px; padding: 0 15px; }
+            .logo-title img { width: 50px; height: 50px; }
+            .logo-title h1 { font-size: 24px; }
+            .menu a { font-size: 16px; padding: 8px; }
+        }
+        @media (max-width: 768px) {
+            .header {
+                height: 60px;
+                padding: 0 10px;
+            }
+            .logo-title img {
+                width: 50px;
+                height: 50px;
+            }
+            .logo-title h1 {
+                font-size: 24px;
+            }
+            .menu a {
+                font-size: 16px;
+                padding-right: 10px;
+            }
+        }
+        @media (max-width: 480px) {
+            .header { height: 50px; padding: 0 5px; }
+            .logo-title img { width: 30px; height: 30px; }
+            .logo-title h1 { font-size: 16px; }
+            .menu a { font-size: 12px; padding: 4px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo-title">
+                <img src="WhatsApp Image 2024-07-13 at 10.47.58_02d5fb7f.jpg" alt="LOGO">
+                <h1>RJH45</h1>
+            </div>
+            <div class="menu">
+                <a href="index.html">Beranda</a>
+                <a href="babad.html">Babad</a>
+                <a href="galeri.html">Galeri</a>
+                <a href="berita.html">Berita</a>
+            </div>
+        </div>
+        <div class="artikel">
+            <div class="hdrtext">
+                <p>Berita Terbaru</p>
+                <h1>Kembali Merayakan Sepak Bola: "Mburu Awak Waras"</h1>
+                <span>12 Mei 2025 12.07</span>
+            </div>
+            <div class="img">
+                <img src="ALANA-48.JPG" alt="foto tim RJH45" width="1400px" height="auto">
+                <p>Squad RJH45 kembali mengolah raga pada pertandingan melawan Duta Putra FC di Stadion Mini Tersono, Sabtu, 10 Mei 2025.(RJH45/Alana Photography)</p>
+            </div>
+            <div class="isi">
+                <p>Di tengah hingar-bingar kompetisi dan semangat ingin menang, banyak yang lupa bahwa sepak bola pada dasarnya adalah permainan yang bisa dinikmati oleh siapa saja.</p>
+
+                <p>Tak selalu soal strategi rumit atau adu kecepatan, terkadang yang paling dibutuhkan hanyalah ruang kosong, bola, dan niat untuk bergerak.</p>
+
+                <p>Bermain sepak bola bersama teman-teman bisa menjadi cara sederhana untuk menjaga tubuh tetap sehat. Saat berlari mengejar bola, menendang, atau sekadar bercanda di lapangan, kita tanpa sadar sedang melatih otot, menjaga jantung tetap aktif, dan membakar kalori. Keringat yang keluar bukan tanda kelelahan semata, tapi juga bukti bahwa tubuh kita sedang dirawat dengan baik.</p>
+            
+                <p>Namun manfaat sepak bola tak hanya berhenti pada fisik. Ada tawa yang tercipta ketika teman salah oper bola, ada senyum puas setelah mencetak gol kecil ke gawang seadanya. Ada rasa bahagia ketika semua orang bisa ikut bermain, tak peduli latar belakang, usia, atau bahkan gender.</p>
+            
+                <p>Karena sepak bola bukan milik laki-laki saja. Perempuan pun bisa bermain dengan semangat dan antusiasme yang sama. Tak perlu seragam resmi atau sepatu mahal, cukup sepatu kets dan semangat bermain, maka lapangan mana pun bisa jadi tempat yang menyenangkan. Lapangan bola bukan ruang eksklusif — ia terbuka untuk siapa saja yang ingin bergerak, tertawa, dan merasa hidup.</p>
+            
+                <p>Bermain bola juga bisa mempererat hubungan antar teman dan keluarga. Saat semua orang berkumpul dan tertawa di lapangan, tercipta kenangan kecil yang bisa dikenang sepanjang waktu. Sepak bola mengajarkan kerja sama, komunikasi, dan saling menghargai. Tanpa disadari, hal-hal ini membentuk karakter kita di luar lapangan juga.</p>
+            
+                <p>Jadi, daripada memikirkan skor dan kemenangan semata, mari jadikan sepak bola sebagai ruang bebas tekanan. Bermainlah untuk sehat, untuk bahagia, untuk merayakan keberagaman, dan untuk berbagi momen berharga. Karena di akhir hari, kemenangan terbesar adalah bisa menikmati permainan, tertawa lepas, dan pulang dengan hati yang ringan.</p>
+            </div>            
+        </div>
+    </div>
+</body>
+</html>
