@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beranda PSS Sleman</title>
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <style>
+    @font-face {
+        font-family: 'Nico Moji';
+        src: url('NicoMoji-Regular.ttf') format('truetype');
+    }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #ffffff;
+        color: #333333;
+    }
+
+    .header {
+        width: 100%;
+        height: 80px;
+        background-color: black;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 20px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+    }
+
+    .logo-title {
+        display: flex;
+        align-items: center;
+    }
+
+    .logo-title img {
+        width: 60px;
+        height: 60px;
+        margin-right: 15px;
+    }
+
+    .logo-title h1 {
+        font-family: 'Nico Moji', sans-serif;
+        color: white;
+        font-size: 28px;
+        margin: 0; 
+    }
+
+    .menu {
+        display: flex;
+    }
+
+    .menu a {
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: 18px;
+        padding: 10px;
+        color: white;
+        text-decoration: none;
+        transition: 0.3s;
+        letter-spacing: 1px;
+    }
+
+    .menu a:hover {
+        color: #b4b4b4;
+    }
+
+    .hero {
+        position: relative;
+        height: 800px;
+        overflow: hidden;
+        background-color: black;
+    }
+
+    .hero-slider {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .slide {
+        display: none;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+
+    .slide.active {
+        display: block;
+    }
+
+    .slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .hero-slider button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 2rem;
+        background: rgba(0, 0, 0, 0.4);
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        z-index: 2;
+    }
+
+    .slider-prev {
+        left: 20px;
+    }
+
+    .slider-next {
+        right: 20px;
+    }
+
+    .section {
+        padding: 60px 20px;
+        max-width: 1200px;
+        margin: auto;
+    }
+
+    .section-title {
+        font-size: 1.75rem;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .news-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+    }
+
+    .news-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .news-card:hover img {
+        transform: scale(1.05);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .news-card .content {
+        padding: 16px;
+    }
+
+    .news-card .content h4 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        margin-bottom: 8px;
+    }
+
+    .news-card .content p {
+        font-size: 0.95rem;
+        color: #666;
+    }
+
+    .footer {
+        background-color: #000000;
+        color: white;
+        padding: 20px 0;
+    }
+
+    .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .footer-text {
+        max-width: 300px;
+    }
+
+    .social-media a {
+        margin: 0 8px;
+        text-decoration: none;
+    }
+
+    /* Media Queries for responsiveness */
+    @media (max-width: 1024px) {
+  .header {
+    height: 70px;
+    padding: 0 15px;
+  }
+  .section {
+    padding: 50px 15px;
+  }
+  .logo-title img {
+    width: 50px;
+    height: 50px;
+  }
+  .logo-title h1 {
+    font-size: 24px;
+  }
+  .menu a {
+    font-size: 16px;
+    padding: 8px;
+  }
+  .news-card .content h4 {
+    font-size: 1rem;
+  }
+  .news-card .content p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    height: 60px;
+    padding: 0 10px;
+  }
+  .logo-title img {
+    width: 50px;
+    height: 50px;
+   }
+  .logo-title h1 {
+    font-size: 20px;
+   }
+  .menu {
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  .menu a {
+   font-size: 14px;
+   padding: 6px;
+  }
+  .hero {
+    height: 400px;
+  }
+  .slide img {
+    object-position: center;
+  }
+  .section-title {
+    font-size: 1.4rem;
+  }
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    height: 50px;
+    padding: 0 5px;
+  }
+  .logo-title {
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+  }
+  .logo-title img {
+    width: 30px;
+    height: 30px;
+  }
+  .logo-title h1 {
+    font-size: 16px;
+  }
+  .menu {
+    flex-direction: row;
+    align-items: center;
+    padding-bottom: 5px;
+  }
+  .menu a {
+    font-size: 12px;
+    padding: px;
+  }
+  .hero {
+    height: 250px;
+  }
+  .hero-slider button {
+    font-size: 1rem;
+    padding: 4px;
+  }
+  .news-grid {
+    grid-template-columns: 1fr;
+  }
+  .news-card .content h4 {
+    font-size: 0.95rem;
+  }
+  .news-card .content p {
+    font-size: 0.8rem;
+  }
+  .footer-text {
+    font-size: 14px;
+  }
+}
+  </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo-title">
+            <img src="WhatsApp Image 2024-07-13 at 10.47.58_02d5fb7f.jpg" alt="LOGO">
+            <h1>RJH45</h1>
+        </div>
+        <div class="menu">
+            <a href="index.html">Beranda</a>
+            <a href="babad.html">Babad</a>
+            <a href="galeri.html">Galeri</a>
+            <a href="berita.html">Berita</a>
+        </div>
+    </div>
+
+    <section class="hero">
+        <div class="hero-slider">
+            <button class="slider-prev">&#10094;</button>
+            <div class="slide active">
+                <img src="Slideshow/slideshow-1.JPG" alt="Slide 1">
+            </div>
+            <div class="slide">
+                <img src="Slideshow/slideshow-2.jpg" alt="Slide 2">
+            </div>
+            <div class="slide">
+                <img src="Slideshow/slideshow-3.JPG" alt="Slide 3">
+            </div>
+            <div class="slide">
+              <img src="Slideshow/slideshow-4.JPG" alt="Slide 3">
+          </div>
+          <div class="slide">
+            <img src="Slideshow/slideshow-5.jpg" alt="Slide 3">
+        </div>
+            <button class="slider-next">&#10095;</button>
+        </div>
+    </section>
+
+    <!-- Berita Terkini -->
+    <section class="section">
+        <h3 class="section-title">Berita Terkini</h3>
+        <div class="news-grid">
+            <a href="artikel izzad.html" class="news-card" target="_blank" rel="noopener noreferrer">
+                <img src="BFI-167.jpg" alt="Berita 1">
+                <div class="content">
+                    <h4>RJH45 Kembali Bermain, Izzad: "Tetep Bisa Sakjose!"</h4>
+                    <p>Gelandang RJH45, Ahmad Izzad siap berdansa kembali ke lapangan hijau.</p>
+                </div>
+            </a>
+
+            <a href="artikel awak waras.html" class="news-card" target="_blank" rel="noopener noreferrer">
+                <img src="ALANA-47.JPG" alt="Berita 2">
+                <div class="content">
+                    <h4>Kembali Merayakan Sepak Bola: "Mburu Awak Waras!"</h4>
+                    <p>RJH45 sukses merayakan kemenangan dengan motto baru, "Mburu Awak Waras".</p>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-text">
+        &copy; 2025 RJH45. All Rights Reserved.
+      </div>
+      <div class="social-media">
+        <a href="https://www.instagram.com/rombonganhaji45_/" target="_blank" aria-label="Instagram">
+          <svg width="24" height="24" fill="white" viewBox="0 0 24 24">
+            <path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.9.3 2.4.6.6.3 1 .7 1.4 1.3.3.5.5 1.2.6 2.4.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.9-.6 2.4-.3.6-.7 1-1.3 1.4-.5.3-1.2.5-2.4.6-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.9-.3-2.4-.6-.6-.3-1-.7-1.4-1.3-.3-.5-.5-1.2-.6-2.4C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-1.9.6-2.4.3-.6.7-1 1.3-1.4.5-.3 1.2-.5 2.4-.6C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3.1 0-3.5 0-4.7.1-.9.1-1.3.2-1.6.4-.4.2-.7.5-.9.9-.2.3-.3.7-.4 1.6-.1 1.2-.1 1.6-.1 4.7s0 3.5.1 4.7c.1.9.2 1.3.4 1.6.2.4.5.7.9.9.3.2.7.3 1.6.4 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c.9-.1 1.3-.2 1.6-.4.4-.2.7-.5.9-.9.2-.3.3-.7.4-1.6.1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c-.1-.9-.2-1.3-.4-1.6-.2-.4-.5-.7-.9-.9-.3-.2-.7-.3-1.6-.4-1.2-.1-1.6-.1-4.7-.1zm0 3.8a4.2 4.2 0 1 1 0 8.4 4.2 4.2 0 0 1 0-8.4zm0 1.8a2.4 2.4 0 1 0 0 4.8 2.4 2.4 0 0 0 0-4.8zm4.6-2a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+          </svg>
+        </a>
+        <a href="https://www.facebook.com/rjh45" target="_blank" aria-label="Facebook">
+          <svg width="24" height="24" fill="white" viewBox="0 0 24 24">
+            <path d="M22.675 0h-21.35C.598 0 0 .6 0 1.325v21.351C0 23.4.598 24 1.325 24h11.482v-9.294H9.692v-3.622h3.115V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.464.099 2.794.143v3.24l-1.918.001c-1.504 0-1.796.715-1.796 1.763v2.31h3.591l-.467 3.622h-3.124V24h6.116C23.4 24 24 23.4 24 22.675V1.325C24 .6 23.4 0 22.675 0z"/>
+          </svg>
+        </a>
+        <a href="https://www.youtube.com/@rjh45" target="_blank" aria-label="YouTube">
+          <svg width="24" height="24" fill="white" viewBox="0 0 24 24">
+            <path d="M23.5 6.2s-.2-1.6-.8-2.3c-.8-.9-1.6-1-2-1C17.7 2.5 12 2.5 12 2.5h0s-5.7 0-8.7.4c-.4 0-1.2.1-2 .9-.6.7-.8 2.3-.8 2.3S0 8.1 0 9.9v1.8c0 1.8.2 3.7.2 3.7s.2 1.6.8 2.3c.8.9 1.9.9 2.4 1 1.7.2 7.2.4 7.2.4s5.7 0 8.7-.4c.4 0 1.2-.1 2-.9.6-.7.8-2.3.8-2.3s.2-1.8.2-3.7V9.9c0-1.8-.2-3.7-.2-3.7zM9.5 15.2V8.8l6.3 3.2-6.3 3.2z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    const prevButton = document.querySelector('.slider-prev');
+    const nextButton = document.querySelector('.slider-next');
+    let activeIndex = 0;
+
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.classList.remove('active');
+            if (i === index) {
+                slide.classList.add('active');
+            }
+        });
+    }
+
+    prevButton.addEventListener('click', () => {
+        activeIndex = (activeIndex === 0) ? slides.length - 1 : activeIndex - 1;
+        showSlide(activeIndex);
+    });
+
+    nextButton.addEventListener('click', () => {
+        activeIndex = (activeIndex === slides.length - 1) ? 0 : activeIndex + 1;
+        showSlide(activeIndex);
+    });
+    
+  </script>
+</body>
+</html>
